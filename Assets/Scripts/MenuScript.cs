@@ -1,74 +1,89 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// <para>
+/// A script to handle the main menu functionality.
+/// </para>
+/// <para>
+/// This is the major script to handle the functionality in the game main menu.
+/// Script handles the change between the menu item selection when the player
+/// toggles between the menu selection and when the desired action is selected.
+/// </para>
+/// </summary>
 public class MenuScript : MonoBehaviour {
-
-    // A color for the selected menu item.
-    public Color selectionColor;
-    // A color for the normal (non-selected) menu items.
-    public Color normalColor;
-
-    public Text onePlayerMenuItem;
-    public Text twoPlayerMenuItem;
     
+    /// <summary>An array of all menu items available.</summary>
+    public MenuItem[] items;
+
+    /// <summary>The index of the currently selected menu item.</summary>
+    private int highlightedIndex = 0;
+
     void Start() {
-        Assert.AreNotEqual(selectionColor, normalColor, "Selected and normal colors cannot be same!");
-        Select(onePlayerMenuItem);
+        // ensure that the 1-player menu item is initally highlighted.
+        Assert.IsTrue(items.Length > 0, "At least one menu item is required!");
+        Highlight(highlightedIndex);
     }
     
+    /// <summary>
+    /// <para>
+    /// Check the button press states in each frame update.
+    /// </para>
+    /// <para>
+    /// User must be able to navigate in menu with UP and DOWN arrow keys. The
+    /// selection is being confirmed when the user presses the ENTER key, which
+    /// also proceeds the player to the next scene.
+    /// </para>
+    /// </summary>
     void Update () {
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            Debug.Log("Detected an UP-arrow key press.");
-            SwapSelection();
+            Highlight((highlightedIndex + items.Length - 1) % items.Length);
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            Debug.Log("Detected an DOWN-arrow key press.");
-            SwapSelection();
+            Highlight((highlightedIndex + 1) % items.Length);
         } else if (Input.GetKeyDown(KeyCode.Return)) {
-            Debug.Log("Detected an ENTER-arrow key press.");
-            // TODO ...
-        }
-    }
-    
-    private void Select(Text item) {
-        Assert.IsNotNull(item, "The item cannot be null!");
-        if (item.Equals(onePlayerMenuItem)) {
-            Highlight(onePlayerMenuItem);
-            Normalize(twoPlayerMenuItem);
-        } else {
-            Normalize(onePlayerMenuItem);
-            Highlight(twoPlayerMenuItem);
+            GameContext ctx = GameContext.Instance;
+            switch (highlightedIndex) {
+                case 0:
+                    ctx.GameMode = GameContext.Mode.SINGLE_PLAYER;
+                    SceneManager.LoadScene("CourtScene");
+                    break;
+                case 1:
+                    ctx.GameMode = GameContext.Mode.MULTIPLAYER;
+                    SceneManager.LoadScene("CourtScene");
+                    break;
+                case 2:
+                    Application.Quit();
+                    break;
+                default:
+                    Assert.IsTrue(false, "Invalid index: " + highlightedIndex);
+                    break;
+            }
         }
     }
 
-    private void Highlight(Text item) {
-        Assert.IsNotNull(item, "The item cannot be null!");
-        item.color = selectionColor;
-        item.transform.localScale = new Vector3(1.1f, 1.1f, 1.0f);
-    }
-
-    private void Normalize(Text item) {
-        Assert.IsNotNull(item, "The item cannot be null!");
-        item.color = normalColor;
-        item.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-    }
-    
-    private void SwapSelection() {
-        if (IsOnePlayerSelected()) {
-            Select(twoPlayerMenuItem);
-        } else {
-            Select(onePlayerMenuItem);
+    /// <summary>
+    /// <para>
+    /// Highlight the menu item with the provided index.
+    /// </para>
+    /// <para>
+    /// This function will highlight the menu item with the provided index and
+    /// also remove the highlight from all other menu items to keep only single
+    /// item to be highlighted at a time.
+    /// </para>
+    /// </summary>
+    /// <param name="index">The index of the target menu item.</param>
+    private void Highlight(int index) {
+        Assert.IsTrue(index >= 0, "Index must be a positive or zero integer!");
+        Assert.IsTrue(index < items.Length, "Index is outside array bounds!");
+        for (var i = 0; i < items.Length; i++) {
+            items[i].Highlighted = (i == index);
         }
-    }
-    
-    private bool IsOnePlayerSelected() {
-        return (onePlayerMenuItem.color == selectionColor);
-    }
-    
-    private bool IsTwoPlayerSelected() {
-        return (twoPlayerMenuItem.color == selectionColor);
+        highlightedIndex = index;
     }
 
 }
