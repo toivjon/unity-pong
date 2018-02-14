@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour {
     
 	void Start () {
-        Debug.Log("GameMode: " + GameContext.Instance.GameMode);
+
 	}
 	
 	void Update () {

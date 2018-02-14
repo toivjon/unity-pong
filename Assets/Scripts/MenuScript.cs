@@ -49,14 +49,9 @@ public class MenuScript : MonoBehaviour {
             GameContext ctx = GameContext.Instance;
             switch (highlightedIndex) {
                 case 0:
-                    ctx.GameMode = GameContext.Mode.SINGLE_PLAYER;
                     SceneManager.LoadScene("CourtScene");
                     break;
                 case 1:
-                    ctx.GameMode = GameContext.Mode.MULTIPLAYER;
-                    SceneManager.LoadScene("CourtScene");
-                    break;
-                case 2:
                     Application.Quit();
                     break;
                 default:

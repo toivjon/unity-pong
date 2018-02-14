@@ -7,11 +7,6 @@ using UnityEngine;
 /// </summary>
 public class GameContext : MonoBehaviour {
 
-    /// <summary>
-    /// A game mode (i.e. multi- or single player) enumeration.
-    /// </summary>
-    public enum Mode { SINGLE_PLAYER, MULTIPLAYER };
-
     // a singleton instance of the context.
     private static GameContext instance;
 
@@ -21,11 +16,6 @@ public class GameContext : MonoBehaviour {
     public static GameContext Instance {
         get { return instance; }
     }
-
-    /// <summary>
-    /// The game mode (i.e. multi- or single player) being currently selected.
-    /// </summary>
-    public Mode GameMode { get; set; }
 
     void Awake() {
         // ensure that the scene only have a single GO with this script.
