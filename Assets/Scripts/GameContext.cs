@@ -17,6 +17,16 @@ public class GameContext : MonoBehaviour {
         get { return instance; }
     }
 
+    /// <summary>
+    /// The score of the player 1.
+    /// </summary>
+    public int Player1Score { get; set; }
+
+    /// <summary>
+    /// The score of the player 2.
+    /// </summary>
+    public int Player2Score { get; set; }
+    
     void Awake() {
         // ensure that the scene only have a single GO with this script.
         if (instance != null && instance != this) {
