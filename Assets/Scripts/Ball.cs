@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    /// <summary>The movement velocity of the ball.</summary>
+    /// <summary>The initial velocity of the ball.</summary>
     public float velocity = 30f;
+
+    /// <summary>The maximum velocity of the ball.</summary>
+    public float maxVelocity = 30f;
+
+    /// <summary>The amount of velocity to increase on each paddle hit.</summary>
+    public float velocityIncrease = 0.5f;
 
     /// <summary>A cached reference to ball rigidbody.</summary>
     private Rigidbody2D rigidBody;
@@ -24,12 +30,20 @@ public class Ball : MonoBehaviour {
             // calculate the normalized [-1...1] hit point.
             var y = (transform.position.y - collision.transform.position.y)  / collision.collider.bounds.size.y;
 
+            // increase the ball velocity.
+            velocity += velocityIncrease;
+            velocity = Mathf.Min(velocity, maxVelocity);
+
             // calculate and set a new direction for the ball.
             var direction = new Vector2(-1, y).normalized;
             rigidBody.velocity = direction * velocity;
         } else if (collision.gameObject.name == "RightPaddle") {
             // calculate the normalized [-1...1] hit point.
             var y = (transform.position.y - collision.transform.position.y) / collision.collider.bounds.size.y;
+
+            // increase the ball velocity.
+            velocity += velocityIncrease;
+            velocity = Mathf.Min(velocity, maxVelocity);
 
             // calculate and set a new direction for the ball.
             var direction = new Vector2(-1, y).normalized;
