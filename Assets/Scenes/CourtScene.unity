@@ -196,6 +196,11 @@ Prefab:
       propertyPath: m_Name
       value: RightPaddle
       objectReference: {fileID: 0}
+    - target: {fileID: 114527388218189602, guid: 34762cf2fc9ceed4a8e6e93cc64bcd42,
+        type: 2}
+      propertyPath: axisName
+      value: Right player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34762cf2fc9ceed4a8e6e93cc64bcd42, type: 2}
   m_IsPrefabParent: 0
@@ -490,6 +495,16 @@ Prefab:
     - target: {fileID: 1522854179192638, guid: 34762cf2fc9ceed4a8e6e93cc64bcd42, type: 2}
       propertyPath: m_Name
       value: LeftPaddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 50263870769110928, guid: 34762cf2fc9ceed4a8e6e93cc64bcd42,
+        type: 2}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114527388218189602, guid: 34762cf2fc9ceed4a8e6e93cc64bcd42,
+        type: 2}
+      propertyPath: axisName
+      value: Left player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34762cf2fc9ceed4a8e6e93cc64bcd42, type: 2}
