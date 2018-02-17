@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour {
     }
 
     void Start() {
-        reset();
+        Reset();
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
