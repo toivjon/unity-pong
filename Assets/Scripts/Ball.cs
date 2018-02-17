@@ -5,13 +5,16 @@ using UnityEngine;
 public class Ball : MonoBehaviour {
 
     /// <summary>The initial velocity of the ball.</summary>
-    public float velocity = 30f;
+    public float initialVelocity = 10f;
 
     /// <summary>The maximum velocity of the ball.</summary>
-    public float maxVelocity = 30f;
+    public float maxVelocity = 20f;
 
     /// <summary>The amount of velocity to increase on each paddle hit.</summary>
     public float velocityIncrease = 0.5f;
+
+    /// <summary>The current velocity of the ball.</summary>
+    private float velocity = 10f;
 
     /// <summary>A cached reference to ball rigidbody.</summary>
     private Rigidbody2D rigidBody;
@@ -21,8 +24,7 @@ public class Ball : MonoBehaviour {
     }
 
     void Start() {
-        // start the movement of the ball.
-        rigidBody.velocity = Vector2.right * velocity;
+        reset();
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -49,6 +51,22 @@ public class Ball : MonoBehaviour {
             var direction = new Vector2(-1, y).normalized;
             rigidBody.velocity = direction * velocity;
         }
+    }
+
+    /// <summary>
+    /// <para>
+    /// Reset the ball into the default (i.e. starting) state.
+    /// </para>
+    /// <para>
+    /// This function will reset all ball definitions back into the default state.
+    /// Useful e.g. to reset the ball state after either player receives a score.
+    /// </para>
+    /// </summary>
+    private void Reset() {
+        velocity = initialVelocity;
+
+        rigidBody.position = new Vector2(0, 0);
+        rigidBody.velocity = Vector2.right * velocity;
     }
 
 }
