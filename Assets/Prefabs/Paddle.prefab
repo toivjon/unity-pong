@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a1c5901398d1641baee2c7545c809c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 20
+  velocity: 10
   axisName: Left Player
 --- !u!212 &212461172651278322
 SpriteRenderer:
