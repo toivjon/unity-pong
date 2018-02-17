@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour {
     }
 
     void Start() {
-        Reset();
+        StartCoroutine(Reset());
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -62,10 +62,16 @@ public class Ball : MonoBehaviour {
     /// Useful e.g. to reset the ball state after either player receives a score.
     /// </para>
     /// </summary>
-    private void Reset() {
-        velocity = initialVelocity;
-
+    private IEnumerator Reset() {
+        // stop the ball and reset the position.
+        velocity = 0f;
         rigidBody.position = new Vector2(0, 0);
+
+        // wait for a second.
+        yield return new WaitForSeconds(1);
+
+        // allow the ball to continue movement.
+        velocity = initialVelocity;
         rigidBody.velocity = Vector2.right * velocity;
     }
 
