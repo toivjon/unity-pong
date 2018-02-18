@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 568186719}
   - component: {fileID: 568186718}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 980164579}
   - component: {fileID: 980164578}
   m_Layer: 0
-  m_Name: Won the Game Text
+  m_Name: WonTheGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 1045156515}
   - component: {fileID: 1045156514}
   m_Layer: 0
-  m_Name: Game Over Text
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 1712372639}
   - component: {fileID: 1712372638}
   m_Layer: 0
-  m_Name: Proceed Instructions Text
+  m_Name: ProceedInstructionsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 2031965343}
   - component: {fileID: 2031965345}
   m_Layer: 0
-  m_Name: Player X Text
+  m_Name: PlayerXText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
