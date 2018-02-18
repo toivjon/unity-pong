@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// A script that handles the overall results text at the end of the game.
+/// </summary>
 public class ResultsText : MonoBehaviour {
 
     void Awake() {

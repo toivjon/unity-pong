@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
+/// <summary>
+/// A script that handles the ball behaviour in the game.
+/// </summary>
 public class Ball : MonoBehaviour {
 
     /// <summary>The initial velocity of the ball.</summary>

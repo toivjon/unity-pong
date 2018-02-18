@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// A script that handles the paddle behaviour in the game.
+/// </summary>
 public class Paddle : MonoBehaviour {
 
     /// <summary>The velocity of the paddle movement.</summary>

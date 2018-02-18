@@ -2,6 +2,9 @@
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// A script that handles the goal behaviour in the game.
+/// </summary>
 public class Goal : MonoBehaviour {
 
     // the score limit for the game.

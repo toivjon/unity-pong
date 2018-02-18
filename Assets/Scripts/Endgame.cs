@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// A script that handles the end game description and proceedings.
+/// </summary>
 public class Endgame : MonoBehaviour {
 
     void Start() {
