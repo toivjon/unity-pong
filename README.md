@@ -10,9 +10,9 @@ Game is split into following scenes:
 3. An end game scene, which contains the results from the court scene.
 
 The list scene transitions:
-1 -> 2 When a player starts the game by selecting the Start Game.
-2 -> 3 When either player receives the 10th point (i.e. game is over).
-3 -> 1 After the enter key is pressed.
+* 1 to 2, When a player starts the game by selecting the Start Game.
+* 2 to 3, When either player receives the 10th point (i.e. game is over).
+* 3 to 1, After the enter key is pressed.
 
 ## Features
 This Pong implementation contains the following features.
