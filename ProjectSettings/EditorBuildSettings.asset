@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CourtScene.unity
     guid: e862d9cdb9b77f8478873cbb2cac8c69
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene.unity
+    guid: 2a200583d4c246e49838f9938170c0ed

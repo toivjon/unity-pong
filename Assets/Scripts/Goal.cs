@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class Goal : MonoBehaviour {
             GameContext ctx = GameContext.Instance;
             ctx.Player1Score++;
             if (ctx.Player1Score >= SCORE_LIMIT) {
-                // TODO game over!
+                SceneManager.LoadScene("EndGameScene");
             } else {
                 rightScore.text = ctx.Player1Score.ToString();
                 ResetPaddles();
@@ -31,7 +32,7 @@ public class Goal : MonoBehaviour {
             GameContext ctx = GameContext.Instance;
             ctx.Player2Score++;
             if (ctx.Player2Score >= SCORE_LIMIT) {
-                // TODO game over!
+                SceneManager.LoadScene("EndGameScene");
             } else {
                 leftScore.text = ctx.Player2Score.ToString();
                 ResetPaddles();
