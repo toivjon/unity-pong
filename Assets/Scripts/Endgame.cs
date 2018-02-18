@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndgameScript : MonoBehaviour {
+public class Endgame : MonoBehaviour {
 
     void Start() {
         // get a reference to game context and text mesh.

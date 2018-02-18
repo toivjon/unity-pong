@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 /// toggles between the menu selection and when the desired action is selected.
 /// </para>
 /// </summary>
-public class MenuScript : MonoBehaviour {
+public class Menu : MonoBehaviour {
     
     /// <summary>An array of all menu items available.</summary>
     public MenuItem[] items;
