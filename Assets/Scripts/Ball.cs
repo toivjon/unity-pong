@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Ball : MonoBehaviour {
 
@@ -19,8 +19,17 @@ public class Ball : MonoBehaviour {
     /// <summary>A cached reference to ball rigidbody.</summary>
     private Rigidbody2D rigidBody;
 
+    /// <summary>A cached reference to ball renderer.</summary>
+    private Renderer rendering;
+
     void Awake() {
+        // get the cached references to necessary components.
         rigidBody = GetComponent<Rigidbody2D>();
+        rendering = GetComponent<Renderer>();
+
+        // assert that each reference actually exists.
+        Assert.IsNotNull(rigidBody, "Ball object must have a Rigidbody2D component.");
+        Assert.IsNotNull(rendering, "Ball object must have a Renderer component.");
     }
 
     void Start() {
@@ -62,10 +71,12 @@ public class Ball : MonoBehaviour {
     /// Useful e.g. to reset the ball state after either player receives a score.
     /// </para>
     /// </summary>
-    private IEnumerator Reset() {
+    public IEnumerator Reset() {
         // stop the ball and reset the position.
         velocity = 0f;
         rigidBody.position = new Vector2(0, 0);
+        rigidBody.velocity = Vector2.right * velocity;
+        rendering.enabled = false;
 
         // wait for a second.
         yield return new WaitForSeconds(1);
@@ -73,6 +84,7 @@ public class Ball : MonoBehaviour {
         // allow the ball to continue movement.
         velocity = initialVelocity;
         rigidBody.velocity = Vector2.right * velocity;
+        rendering.enabled = true;
     }
 
 }
