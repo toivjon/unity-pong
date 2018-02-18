@@ -24,3 +24,4 @@ This Pong implementation contains the following features.
 * Ball direction is randomized from six different directions after each reset.
 * Paddles are returned to the default position after each reset.
 
+## Screenshots
