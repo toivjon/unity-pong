@@ -156,7 +156,8 @@ Prefab:
       propertyPath: m_Name
       value: LeftScore
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114251171687215884, guid: 23e69568796bb8e4fb35d1989e01f381, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 23e69568796bb8e4fb35d1989e01f381, type: 2}
   m_IsPrefabParent: 0
 --- !u!102 &276649015 stripped
@@ -650,7 +651,8 @@ Prefab:
       propertyPath: m_Name
       value: RightScore
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114251171687215884, guid: 23e69568796bb8e4fb35d1989e01f381, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 23e69568796bb8e4fb35d1989e01f381, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1934887887
