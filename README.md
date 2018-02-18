@@ -25,3 +25,6 @@ This Pong implementation contains the following features.
 * Paddles are returned to the default position after each reset.
 
 ## Screenshots
+![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/welcome-scene.png "WelcomeScene")
+![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/court-scene.png"CourtScene")
+![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/endgame-scene.png "EndGameScene")
