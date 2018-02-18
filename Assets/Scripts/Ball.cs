@@ -83,8 +83,30 @@ public class Ball : MonoBehaviour {
 
         // allow the ball to continue movement.
         velocity = initialVelocity;
-        rigidBody.velocity = Vector2.right * velocity;
+        rigidBody.velocity = RandomDirection() * velocity;
         rendering.enabled = true;
+    }
+
+    /// <summary>
+    /// Randomize direction from six different directions. These direction are
+    /// up-right, up-left, middle-right, middle-left, down-right and down-left.
+    /// </summary>
+    /// <returns>A normalized direction.</returns>
+    private Vector2 RandomDirection() {
+        switch (Random.Range(0, 6)) {
+            case 0:
+                return new Vector2(-0.5f, 0.5f).normalized;
+            case 1:
+                return new Vector2(-1.0f, 0.0f).normalized;
+            case 2:
+                return new Vector2(-0.5f, -0.5f).normalized;
+            case 3:
+                return new Vector2(0.5f, 0.5f).normalized;
+            case 4:
+                return new Vector2(1.0f, 0.0f).normalized;
+            default:
+                return new Vector2(0.5f, -0.5f).normalized;
+        }
     }
 
 }
