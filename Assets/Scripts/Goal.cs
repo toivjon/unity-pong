@@ -22,7 +22,7 @@ public class Goal : MonoBehaviour {
             GameContext ctx = GameContext.Instance;
             ctx.Player1Score++;
             if (ctx.Player1Score >= SCORE_LIMIT) {
-                SceneManager.LoadScene("EndGameScene");
+                SceneManager.LoadScene("EndGame");
             } else {
                 rightScore.text = ctx.Player1Score.ToString();
                 ResetPaddles();
@@ -32,7 +32,7 @@ public class Goal : MonoBehaviour {
             GameContext ctx = GameContext.Instance;
             ctx.Player2Score++;
             if (ctx.Player2Score >= SCORE_LIMIT) {
-                SceneManager.LoadScene("EndGameScene");
+                SceneManager.LoadScene("EndGame");
             } else {
                 leftScore.text = ctx.Player2Score.ToString();
                 ResetPaddles();

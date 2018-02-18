@@ -19,7 +19,7 @@ public class Endgame : MonoBehaviour {
     void Update() {
         // proceed back to main menu after enter is pressed.
         if (Input.GetKeyDown(KeyCode.Return)) {
-            SceneManager.LoadScene("WelcomeScene");
+            SceneManager.LoadScene("Welcome");
         }
     }
 

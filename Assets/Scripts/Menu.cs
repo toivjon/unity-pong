@@ -46,7 +46,7 @@ public class Menu : MonoBehaviour {
             switch (highlightedIndex) {
                 case 0:
                     ctx.Reset();
-                    SceneManager.LoadScene("CourtScene");
+                    SceneManager.LoadScene("Court");
                     break;
                 case 1:
                     Application.Quit();
