@@ -26,5 +26,5 @@ This Pong implementation contains the following features.
 
 ## Screenshots
 ![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/welcome-scene.png "WelcomeScene")
-![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/court-scene.png"CourtScene")
+![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/court-scene.png "CourtScene")
 ![alt text](https://github.com/toivjon/unity-pong/blob/master/Screenshots/endgame-scene.png "EndGameScene")
