@@ -11,6 +11,11 @@ public class Goal : MonoBehaviour {
     /// <summary>A reference to left paddle.</summary>
     public Paddle leftPaddle;
 
+    /// <summary>A reference to right score.</summary>
+    public TextMesh rightScore;
+    /// <summary>A reference to left score.</summary>
+    public TextMesh leftScore;
+
     void OnCollisionEnter2D(Collision2D collision) {
         if (gameObject.name == "RightGoal") {
             GameContext ctx = GameContext.Instance;
@@ -18,6 +23,7 @@ public class Goal : MonoBehaviour {
             if (ctx.Player1Score >= SCORE_LIMIT) {
                 // TODO game over!
             } else {
+                rightScore.text = ctx.Player1Score.ToString();
                 ResetPaddles();
                 ResetBall(collision.collider.gameObject);
             }
@@ -27,6 +33,7 @@ public class Goal : MonoBehaviour {
             if (ctx.Player2Score >= SCORE_LIMIT) {
                 // TODO game over!
             } else {
+                leftScore.text = ctx.Player2Score.ToString();
                 ResetPaddles();
                 ResetBall(collision.collider.gameObject);
             }
