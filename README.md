@@ -8,3 +8,4 @@ This Pong implementation contains the following features.
 * Ball velocity is increased on each hit with a paddle.
 * Ball velocity does not exceed the pre-defined maximum velocity.
 * Ball movement is being stopped for a second after each reset.
+* Paddles are returned to the default position after each reset.

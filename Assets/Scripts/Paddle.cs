@@ -24,4 +24,11 @@ public class Paddle : MonoBehaviour {
         rigidBody.velocity = new Vector2(0, axis) * velocity;
     }
 
+    /// <summary>
+    /// Reset the paddle position back to default position.
+    /// </summary>
+    public void Reset() {
+        rigidBody.position = new Vector2(rigidBody.position.x, 0);
+    }
+
 }

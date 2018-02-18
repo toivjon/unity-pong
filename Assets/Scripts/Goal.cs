@@ -6,6 +6,11 @@ public class Goal : MonoBehaviour {
     // the score limit for the game.
     private const int SCORE_LIMIT = 10;
 
+    /// <summary>A reference to right paddle.</summary>
+    public Paddle rightPaddle;
+    /// <summary>A reference to left paddle.</summary>
+    public Paddle leftPaddle;
+
     void OnCollisionEnter2D(Collision2D collision) {
         if (gameObject.name == "RightGoal") {
             GameContext ctx = GameContext.Instance;
@@ -13,6 +18,7 @@ public class Goal : MonoBehaviour {
             if (ctx.Player1Score >= SCORE_LIMIT) {
                 // TODO game over!
             } else {
+                ResetPaddles();
                 ResetBall(collision.collider.gameObject);
             }
         } else if (gameObject.name == "LeftGoal") {
@@ -21,6 +27,7 @@ public class Goal : MonoBehaviour {
             if (ctx.Player2Score >= SCORE_LIMIT) {
                 // TODO game over!
             } else {
+                ResetPaddles();
                 ResetBall(collision.collider.gameObject);
             }
         }
@@ -37,6 +44,14 @@ public class Goal : MonoBehaviour {
         Ball ball = ballGameObject.GetComponent<Ball>();
         Assert.IsNotNull(ball, "Other ball game object does not have a Ball script!");
         StartCoroutine(ball.Reset());
+    }
+
+    /// <summary>
+    /// Reset the paddles back into the default positions.
+    /// </summary>
+    void ResetPaddles() {
+        rightPaddle.Reset();
+        leftPaddle.Reset();
     }
 
 }
