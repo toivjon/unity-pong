@@ -10,3 +10,4 @@ This Pong implementation contains the following features.
 * Ball movement is being stopped for a second after each reset.
 * Ball direction is randomized from six different directions after each reset.
 * Paddles are returned to the default position after each reset.
+* 
