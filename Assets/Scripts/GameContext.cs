@@ -39,4 +39,12 @@ public class GameContext : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
     }
 
+    /// <summary>
+    /// Reset the game context into the default state.
+    /// </summary>
+    public void Reset() {
+        Player1Score = 0;
+        Player2Score = 0;
+    }
+
 }

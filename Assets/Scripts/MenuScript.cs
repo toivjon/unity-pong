@@ -49,6 +49,7 @@ public class MenuScript : MonoBehaviour {
             GameContext ctx = GameContext.Instance;
             switch (highlightedIndex) {
                 case 0:
+                    ctx.Reset();
                     SceneManager.LoadScene("CourtScene");
                     break;
                 case 1:
